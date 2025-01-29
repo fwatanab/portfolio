@@ -1,0 +1,113 @@
+.skills {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* スキルカテゴリー */
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* スキルリストを縦並びにする */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* スキルカード（横長） */
+.skill-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ホバー時の変化 */
+.skill-card:hover {
+  background: #e8e8e8;
+  transform: scale(1.02);
+}
+
+.skill-card.active {
+  background: #e3f2fd;
+}
+
+/* 進捗バー */
+.progress-bar {
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  height: 12px;
+  width: 70%;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* スキル説明（クリック時に表示） */
+.skill-description {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #333;
+  display: none;
+}
+
+.skill-card.active .skill-description {
+  display: block;
+}
+
+/* スキルレベルによる色分け (低 → 高で色が変化) */
+.progress[data-level="95"], .progress[data-level="90"] {
+  background: linear-gradient(90deg, #2ecc71, #27ae60); /* 緑 */
+}
+
+.progress[data-level="85"], .progress[data-level="80"] {
+  background: linear-gradient(90deg, #1abc9c, #16a085); /* 青緑 */
+}
+
+.progress[data-level="75"], .progress[data-level="70"] {
+  background: linear-gradient(90deg, #3498db, #2980b9); /* 青 */
+}
+
+.progress[data-level="65"], .progress[data-level="60"] {
+  background: linear-gradient(90deg, #9b59b6, #8e44ad); /* 紫 */
+}
+
+.progress[data-level="50"], .progress[data-level="45"] {
+  background: linear-gradient(90deg, #f1c40f, #f39c12); /* 黄 */
+}
+
+.progress[data-level="40"], .progress[data-level="35"] {
+  background: linear-gradient(90deg, #e67e22, #d35400); /* 橙 */
+}
+
+.progress[data-level="30"], .progress[data-level="25"] {
+  background: linear-gradient(90deg, #e74c3c, #c0392b); /* 赤 */
+}
+
+.progress[data-level="10"], .progress[data-level="0"] {
+  background: #7f8c8d; /* グレー */
+}

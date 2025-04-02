@@ -1,6 +1,6 @@
 .projects {
   padding: 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   text-align: center;
 }
 
@@ -12,7 +12,7 @@
   white-space: nowrap;
   padding-bottom: 10px;
   scrollbar-width: thin;
-  scrollbar-color: #ccc transparent;
+  scrollbar-color: #cccccc transparent;
 }
 
 /* スクロールバーのカスタマイズ（Webkit系ブラウザ用） */
@@ -21,7 +21,7 @@
 }
 
 .project-list::-webkit-scrollbar-thumb {
-  background: #aaa;
+  background: #aaaaaa;
   border-radius: 3px;
 }
 
@@ -31,7 +31,7 @@
   width: 360px; /* 幅 */
   height: 160px; /* 高さ（正方形） */
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-radius: 8px;
   background-color: #f9f9f9;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -63,7 +63,7 @@
 /* 説明文のスタイル（改行対応） */
 .project-item p {
   font-size: 0.9rem;
-  color: #333;
+  color: #333333;
   margin: 0 0 10px;
   text-align: center;
   word-wrap: break-word; /* 自動改行を有効化 */
@@ -83,7 +83,7 @@
 
 .tech-badge {
   background-color: #ff7f50;
-  color: white;
+  color: #ffffff;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.85rem;

@@ -1,31 +1,13 @@
-/* ヘッダー全体のレイアウト（固定） */
 header {
-  position: fixed; /* 画面上部に固定 */
-  top: 0;
-  left: 0;
-  width: 100vw; /* はみ出し防止 */
+  background-color: #333333;
+  color: #ffffff;
+  width: 100%;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* ロゴとナビを左右に分ける */
-  padding: 20px 30px; /* ヘッダーの上下の厚みの調整 */
-  background-color: #333;
-  color: white;
   z-index: 1000; /* 他の要素より前面に表示 */
-  box-sizing: border-box;
 }
 
-/* ページ全体の余白調整（ヘッダーの高さ分を確保） */
-body {
-  padding-top: 60px; /* ヘッダーの高さ分 */
-}
-
-/* ロゴ（左側） */
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-/* ナビゲーションメニュー */
 nav {
   flex-grow: 1;
   display: flex;
@@ -40,13 +22,11 @@ nav ul {
   padding: 0;
 }
 
-/* メニューボタン */
 nav ul li button {
   background: none;
   border: none;
-  color: white;
+  color: #ffffff;
   font-size: 1rem;
-  cursor: pointer;
 }
 
 nav ul li button:hover {

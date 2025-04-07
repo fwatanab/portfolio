@@ -13,16 +13,20 @@ import PuyoGameDetail from "./pages/PuyoGameDetail";
 const App = (): JSX.Element => {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects/minishell" element={<MinishellDetail />} />
-        <Route path="/projects/cub3D" element={<Cub3DDetail />} />
-        <Route path="/projects/easyChat" element={<EasyChatDetail />} />
-        <Route path="/projects/inception" element={<InceptionDetail />} />
-        <Route path="/projects/puyoGame" element={<PuyoGameDetail/>} />
-      </Routes>
-      <Footer />
+      <div className="app">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects/minishell" element={<MinishellDetail />} />
+            <Route path="/projects/cub3D" element={<Cub3DDetail />} />
+            <Route path="/projects/easyChat" element={<EasyChatDetail />} />
+            <Route path="/projects/inception" element={<InceptionDetail />} />
+            <Route path="/projects/puyoGame" element={<PuyoGameDetail/>} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 };

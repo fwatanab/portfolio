@@ -4,8 +4,13 @@
 	box-sizing: border-box;
 }
 
-body {
+main {
 	font-family: Arial, sans-serif;
 	background-color: #f5f5f5;
 	color: #333333;
+	padding-top: 50px;
+}
+
+main section {
+	scroll-margin-top: 50px;
 }

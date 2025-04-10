@@ -1,66 +1,120 @@
+/* cub3d-detail.css */
+
 .cub3d-detail {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #f9f9f9;
+  background: #1e1e2e;
+  color: #d4d4d8;
+  padding: 40px;
+  min-height: 100vh;
 }
 
-.cub3d-detail section {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.cub3d-detail .project-name {
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #8aadf4;
 }
 
-.cub3d-detail section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.cub3d {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #252532;
+  color: #d4d4d8;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  font-family: Arial, sans-serif;
 }
 
-.cub3d-detail h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-  border-left: 4px solid #007acc;
-  padding-left: 0.6rem;
+/* タイトルと見出し */
+.cub3d h2 {
+  font-size: 1.6rem;
+  color: #8aadf4;
+  border-bottom: 2px solid #8aadf4;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
-.cub3d-detail h3 {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #555;
+.cub3d h2::before {
+  content: "▶ ";
+  color: #8aadf4;
 }
 
-.cub3d-detail ul {
-  padding-left: 1.2rem;
+.cub3d h2 + p,
+.cub3d h2 + ul {
+  margin-top: 10px;
+}
+
+/* リスト */
+.cub3d ul {
   list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
-.cub3d-detail li {
-  margin-bottom: 0.5rem;
-  color: #444;
+.cub3d li {
+  margin-bottom: 8px;
 }
 
-.cub3d-detail p {
-  color: #444;
+/* セクション間の間隔 */
+.cub3d section {
+  margin-bottom: 30px;
+}
+
+/* テキスト強調 */
+.cub3d p, li {
   line-height: 1.6;
 }
 
-.cub3d-detail pre {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  overflow-x: auto;
-  color: #333;
-}
-
-.cub3d-detail a {
-  color: #007acc;
+.cub3d a {
+  color: #8aadf4;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.cub3d-detail a:hover {
+.cub3d a:hover {
   text-decoration: underline;
+}
+
+/* 画像スタイル */
+.cub3d .gallery img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+}
+
+/* GitHubセクション */
+.cub3d .github {
+  text-align: center;
+}
+
+.cub3d .github a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cub3d .github a:hover {
+  background-color: #388e3c;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .cub3d {
+    padding: 15px;
+  }
+
+  .cub3d h2 {
+    font-size: 1.4rem;
+  }
+
+  .cub3d ul {
+    padding-left: 15px;
+  }
 }

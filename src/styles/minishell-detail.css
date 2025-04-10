@@ -9,6 +9,14 @@
   min-height: 100vh;
 }
 
+.minishell-detail .project-name {
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #4af626;
+}
+
 .minishell {
   max-width: 800px;
   margin: 0 auto;
@@ -18,7 +26,7 @@
   border-radius: 8px;
 }
 
-section {
+.minishell section {
   margin-bottom: 30px;
 }
 
@@ -60,7 +68,7 @@ section {
 }
 
 /* 画像のスタイル */
-.demonstration img {
+.minishell .demonstration img {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
@@ -68,12 +76,12 @@ section {
 }
 
 /* GitHubリンク用スタイル */
-.github-link {
+.minishell .github {
   margin-top: 20px;
   text-align: center;
 }
 
-.github-link a {
+.minishell .github a {
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -86,17 +94,17 @@ section {
   transition: all 0.3s ease;
 }
 
-.github-link a:hover {
+.minishell .github a:hover {
   background-color: #7cff7a;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.7);
   transform: translateY(-2px);
 }
 
-.github-link a:active {
+.minishell .github a:active {
   transform: translateY(1px);
 }
 
-.github-link a::before {
+.minishell .github a::before {
   content: "🔗 ";
 }
 
@@ -115,7 +123,7 @@ section {
     font-size: 0.9rem;
   }
 
-  .github-link a {
+  .minishell .github a {
     font-size: 14px;
     padding: 8px 16px;
   }

@@ -4,10 +4,11 @@ import "../styles/minishell-detail.css";
 const MinishellDetail = (): JSX.Element => {
   return (
     <div className="minishell-detail">
+      <h2 className="project-name">minishell</h2>
       <div className="minishell">
         <section className="summary">
-         <h2>🎉 プロジェクト概要</h2>
-         <p>minishellは、Bash風の独自シェルをC言語で実装した42Tokyoの課題です。低レイヤーの理解を深め、POSIX準拠のシェル機能を再現しています。環境変数の展開、リダイレクト、パイプ処理、条件演算子など、基本的なシェルの動作をサポートします。</p>
+          <h2>🎉 プロジェクト概要</h2>
+          <p>minishellは、Bash風の独自シェルをC言語で実装した42Tokyoの課題です。低レイヤーの理解を深め、POSIX準拠のシェル機能を再現しています。環境変数の展開、リダイレクト、パイプ処理、条件演算子など、基本的なシェルの動作をサポートします。</p>
         </section>
 
         <section className="environment">
@@ -78,15 +79,11 @@ const MinishellDetail = (): JSX.Element => {
         <section className="comment">
           <h2>🏆 最後に</h2>
           <p>POSIXシステムコールを活用したシェルプログラムをC言語で実装し、UNIXシステムの基礎理解とプロセス制御の知識を深めました。グループプロジェクトを通じて、開発と調整スキルも向上しました。</p>
-          <div className="github-link">
-            <a
-                href="https://github.com/fwatanab/minishell"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              リポジトリを見る
-            </a>
-          </div>
+        </section>
+
+        <section className="github">
+          <h2>GitHub</h2>
+            <a href="https://github.com/fwatanab/minishell" target="_blank">リポジトリを見る </a>
         </section>
       </div>
     </div>

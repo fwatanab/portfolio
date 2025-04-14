@@ -1,31 +1,55 @@
 .hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: calc(100vh - 80px); /* ヘッダー分の高さを引く */
+  align-items: center;
   text-align: center;
+  height: calc(100vh - 80px); /* ヘッダー分差し引き */
   background-color: #f0f0f0;
+  padding: 2rem;
 }
 
-.hero-content h1 {
-  font-size: 3rem; /* 少し大きく */
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
   margin-bottom: 1.5rem;
 }
 
-.hero-content p {
-  font-size: 1.4rem;
-  margin-bottom: 2.5rem;
+.hero-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  word-break: keep-all; /* 英単語の途中で折り返さない */
 }
 
-.cta-button {
+.hero-button {
   padding: 12px 24px;
   background-color: #007bff;
   color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.hero-button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
 }

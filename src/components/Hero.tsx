@@ -11,7 +11,7 @@ const Hero = (): JSX.Element => {
           自作関数で環境を構築してきた経験を通して「ゼロから組み立てる力」を身につけました。
         </p>
         <p className="hero-subtitle">
-          現在はC/C++を軸にしながら、ReactやGoなども取り入れ、
+          現在はC/C++を軸にしながら、ReactやPythonなどの扱いやすい言語も取り入れつつ、
           フルスタックエンジニアとして実践力を磨いています。
         </p>
         <a href="#projects" className="hero-button">プロジェクトを見る</a>

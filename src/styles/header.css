@@ -1,14 +1,18 @@
 header {
   background-color: #333333;
   color: #ffffff;
-  width: 100%;
+  width: 100vw;
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  z-index: 1000; /* 他の要素より前面に表示 */
+  z-index: 1000;
   position: fixed;
+  top: 0; /* 明示的に画面上部に固定 */
+  left: 0;
+  box-sizing: border-box; /* パディングを含めて横幅100%に */
 }
 
+/* ナビゲーション */
 nav {
   flex-grow: 1;
   display: flex;
@@ -28,25 +32,23 @@ nav ul li button {
   border: none;
   color: #ffffff;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 nav ul li button:hover {
   text-decoration: underline;
 }
 
-/* レスポンシブ対応（スマホ時は中央寄せ） */
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
+  /* 必要であれば最小限だけ残す */
+  nav ul {
+    gap: 10px;
+    flex-wrap: wrap; /* 足りなければ折り返し */
     justify-content: center;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
+  header {
+    padding: 10px; /* コンパクトに */
   }
 }

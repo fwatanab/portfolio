@@ -1,7 +1,6 @@
-import React from 'react';
-import '../styles/hero.css';
+import React from "react";
+import "../styles/hero.css";
 
-// ヒーローセクション
 const Hero = (): JSX.Element => {
   return (
     <section id="top" className="hero">
@@ -12,7 +11,8 @@ const Hero = (): JSX.Element => {
           自作関数で環境を構築してきた経験を通して「ゼロから組み立てる力」を身につけました。
         </p>
         <p className="hero-subtitle">
-          現在はフルスタックエンジニアとして実践力を磨いています。
+          現在はC/C++を軸にしながら、ReactやGoなども取り入れ、
+          フルスタックエンジニアとして実践力を磨いています。
         </p>
         <a href="#projects" className="hero-button">プロジェクトを見る</a>
       </div>

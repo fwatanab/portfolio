@@ -6,54 +6,82 @@ const skills = [
   {
     category: "言語・技術スタック",
     items: [
-      { name: "C", level: 70, description: "2つのプロジェクトで使用。OSの基礎知識も理解" },
-      { name: "C++", level: 60, description: "ゲーム開発（puyoGame）で使用。SDL2を利用" },
-      { name: "Docker", level: 60, description: "Web3層アーキテクチャ（inception）を構築" },
-      { name: "MySQL", level: 50, description: "DB設計・運用（easyChat）で使用。基本的なクエリは理解" },
-      { name: "React", level: 40, description: "フロントエンド開発（easyChat）で使用。調べながら実装可能" },
-      { name: "JavaScript / TypeScript", level: 40, description: "React開発に使用。基本的な構文を理解" },
-      { name: "HTML / CSS", level: 50, description: "Reactを扱う上で必要なため使用経験あり" },
-      { name: "Go", level: 40, description: "バックエンド開発（easyChat）で使用。調べながら実装可能" },
+      { name: "C", level: 75, description: "42Tokyoで学習の中心として使用。ライブラリを制限された環境でシェルや3D描画エンジンなどを開発。" },
+      { name: "C++", level: 65, description: "Cから発展して学習。SDL2を用いたGUIゲーム開発でオブジェクト指向を実践的に経験。" },
+      { name: "React", level: 50, description: "ポートフォリオサイトやチャットアプリのフロント実装で使用。コンポーネント設計や状態管理の基本を理解。" },
+      { name: "Docker", level: 60, description: "Docker Composeを用いたWebサーバー構築経験あり。.envからの自動セットアップなども実践。" },
+      { name: "MySQL", level: 50, description: "Webアプリにおけるデータ設計・取得・保守を経験。基本的なクエリ操作に対応可能。" },
+      { name: "Python", level: 45, description: "補助スクリプト作成や個人学習に使用。扱いやすさとデータ処理への応用も学習中。" },
+      { name: "Go", level: 35, description: "リアルタイム通信アプリでバックエンド処理に使用。WebSocketのハンドリング経験あり。" },
     ],
   },
   {
     category: "ツール・開発環境",
     items: [
-      { name: "Git", level: 80, description: "全てのプロジェクトで使用。GitHub運用経験あり" },
+      { name: "Git", level: 80, description: "全てのプロジェクトでGitHubベースで運用。共同での運用経験あり。" },
       { name: "Vim", level: 70, description: "ほぼ全てのコードをVimで実装" },
       { name: "VSCode", level: 60, description: "ReactやTypeScriptの開発で使用" },
-      { name: "Linux / Unix ターミナル", level: 70, description: "CLI操作に慣れており、スクリプト作成経験あり" },
-    ],
-  },
-  {
-    category: "知識・経験",
-    items: [
-      { name: "アルゴリズム・データ構造", level: 60, description: "基本的なアルゴリズムとデータ構造を理解" },
-      { name: "OSの基礎知識", level: 50, description: "プロセス管理・シグナルなどの基礎理解あり" },
-      { name: "コンテナ技術（Docker Compose）", level: 60, description: "コンテナの設定・運用経験あり" },
-      { name: "ネットワーク / Web（WebSocket）", level: 50, description: "リアルタイム通信の実装経験あり" },
-      { name: "ゲーム開発（SDL2）", level: 50, description: "C++でのGUIゲーム開発経験あり" },
-    ],
-  },
-  {
-    category: "その他",
-    items: [
-      { name: "実務経験", level: 0, description: "未経験エンジニア" },
-      { name: "チーム開発経験", level: 40, description: "42Tokyoの課題でペアプログラミング経験あり" },
-      { name: "OSSコントリビューション", level: 0, description: "未経験" },
+      { name: "Linux / Unix ターミナル", level: 70, description: "VimやMakefileを活用したUNIX環境での開発に精通。CLI操作が日常的。" },
     ],
   },
 ];
 
 const Skills = (): JSX.Element => {
   const [activeSkill, setActiveSkill] = useState<string | null>(null);
+  const [showGuideline, setShowGuideline] = useState(false);
 
   return (
     <section id="skills" className="skills">
       <h2>スキルセット</h2>
-      <p className="skill-info">
-        スキル評価基準は <a href="/skills/evaluation">こちら</a>
-      </p>
+      <div className="skill-guideline-container">
+        <button
+          className="guideline-toggle"
+          onClick={() => setShowGuideline(!showGuideline)}
+        >
+          {showGuideline ? "評価基準を隠す" : "評価基準を表示"}
+        </button>
+        
+        {showGuideline && (
+          <div className="skill-guideline">
+            <table>
+              <thead>
+                <tr>
+                  <th>レベル</th>
+                  <th>評価名</th>
+                  <th>説明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>80〜100</td>
+                  <td>実務相当レベル</td>
+                  <td>設計〜実装まで自力対応可能。42Tokyoで主軸として使用した経験あり。</td>
+                </tr>
+                <tr>
+                  <td>60〜79</td>
+                  <td>実装可能レベル</td>
+                  <td>基本構文・ライブラリに習熟。多くの処理を自力で実装可能。</td>
+                </tr>
+                <tr>
+                  <td>40〜59</td>
+                  <td>基礎理解レベル</td>
+                  <td>調べながら実装できるレベル。文法・構造の基本を理解している。</td>
+                </tr>
+                <tr>
+                  <td>20〜39</td>
+                  <td>入門・初学レベル</td>
+                  <td>簡単な処理やチュートリアル経験あり。継続学習中。</td>
+                </tr>
+                <tr>
+                  <td>0〜19</td>
+                  <td>未経験・非使用</td>
+                  <td>知識のみ、または未使用。今後の習得対象。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
       {skills.map((skillSet, index) => (
         <div key={index} className="skill-category">
           <h3>{skillSet.category}</h3>

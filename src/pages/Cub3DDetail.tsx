@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/cub3DDetail.css';
+import '../styles/cub3d-detail.css';
 
 const Cub3DDetail = (): JSX.Element => {
   return (

@@ -17,10 +17,9 @@ const Cub3DDetail = (): JSX.Element => {
         <section className="goal">
           <h2>目的</h2>
           <ul>
-            <li>C言語の熟練度向上</li>
-            <li>アルゴリズム設計力の強化</li>
-            <li>数学を駆使したグラフィックス処理</li>
-            <li>リアルタイム描画の実装</li>
+            <li>低レイヤーでの描画処理の理解</li>
+            <li>線形代数・三角関数を用いた視点変換</li>
+            <li>Cによる構造化・責務分離</li>
           </ul>
         </section>
 
@@ -28,22 +27,22 @@ const Cub3DDetail = (): JSX.Element => {
           <h2>使用技術と開発環境</h2>
           <ul>
             <li>言語: C</li>
-            <li>グラフィックス: MiniLibX</li>
-            <li>ライブラリ: math.h, libft (自作のライブラリ)</li>
-            <li>技術: レイキャスティングによる3D描画</li>
-            <li>コンパイラ: CC</li>
+            <li>描画: MiniLibX</li>
+            <li>ツール: Makefile, libft（自作ライブラリ）</li>
+            <li>アルゴリズム: レイキャスティング、DDA法</li>
+            <li>OS: macOS / Linux</li>
           </ul>
         </section>
 
         <section className="features">
           <h2>実装機能</h2>
           <ul>
-            <li>.cubファイルのマップ読み込み</li>
-            <li>視点からの3D描画</li>
-            <li>壁の方角ごとに異なるテクスチャ</li>
+            <li>.cub形式のマップ読み込み</li>
+            <li>視点に基づく3D空間の動的描画</li>
+            <li>テクスチャの壁面ごとの割り当て</li>
             <li>床・天井のカラー設定</li>
-            <li>W/A/S/Dで移動、矢印キーで視点回転</li>
-            <li>ESCキー・ウィンドウ×ボタンで終了</li>
+            <li>キー入力による移動（WASD）と視点回転（← →）</li>
+            <li>ESCキー、×ボタンで終了</li>
           </ul>
         </section>
 
@@ -58,8 +57,17 @@ const Cub3DDetail = (): JSX.Element => {
         </section>
 
         <section className="gallery">
-          <h2>サンプル画像</h2>
-          <img src="/images/cub3d/demo1.png" alt="cub3D 基本描画" />
+          <h2>サンプル映像</h2>
+          <div className="message">
+            <video
+              src="/images/cub3d/sample.mp4"
+              controls
+              width="100%"
+              style={{ borderRadius: "5px" }}
+            >
+              お使いのブラウザは動画再生に対応していません。
+            </video>
+          </div>
         </section>
 
         <section className="learning">
@@ -77,7 +85,7 @@ const Cub3DDetail = (): JSX.Element => {
             target="_blank"
             rel="noreferrer"
           >
-            リポジトリを見る
+            ソースコードを見る
           </a>
         </section>
       </div>

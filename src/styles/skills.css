@@ -63,6 +63,13 @@
   color: #ecf0f1;
 }
 
+.skill-guideline .guideline-note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #dcdcdc; /* 少し薄めで補足らしく */
+  font-style: italic; /* 傍注っぽく */
+}
+
 /* スキルカテゴリー */
 .skill-category {
   margin-bottom: 2rem;
@@ -146,34 +153,56 @@
 }
 
 /* スキルレベルによる色分け (低 → 高で色が変化) */
-.progress[data-level="95"], .progress[data-level="90"] {
+/* 90–100: 緑 */
+.progress[data-level="100"],
+.progress[data-level="95"],
+.progress[data-level="90"] {
   background: linear-gradient(90deg, #2ecc71, #27ae60); /* 緑 */
 }
 
-.progress[data-level="85"], .progress[data-level="80"] {
+/* 80–89: 青緑 */
+.progress[data-level="85"],
+.progress[data-level="80"] {
   background: linear-gradient(90deg, #1abc9c, #16a085); /* 青緑 */
 }
 
-.progress[data-level="75"], .progress[data-level="70"] {
+/* 70–79: 青 */
+.progress[data-level="75"],
+.progress[data-level="70"] {
   background: linear-gradient(90deg, #3498db, #2980b9); /* 青 */
 }
 
-.progress[data-level="65"], .progress[data-level="60"] {
+/* 60–69: 紫 */
+.progress[data-level="65"],
+.progress[data-level="60"] {
   background: linear-gradient(90deg, #9b59b6, #8e44ad); /* 紫 */
 }
 
-.progress[data-level="50"], .progress[data-level="45"] {
+/* 50–59: 黄 */
+.progress[data-level="55"],
+.progress[data-level="50"] {
   background: linear-gradient(90deg, #f1c40f, #f39c12); /* 黄 */
 }
 
-.progress[data-level="40"], .progress[data-level="35"] {
+/* 40–49: 橙 */
+.progress[data-level="45"],
+.progress[data-level="40"] {
   background: linear-gradient(90deg, #e67e22, #d35400); /* 橙 */
 }
 
-.progress[data-level="30"], .progress[data-level="25"] {
+/* 25–39: 赤 */
+.progress[data-level="35"],
+.progress[data-level="30"],
+.progress[data-level="25"] {
   background: linear-gradient(90deg, #e74c3c, #c0392b); /* 赤 */
 }
 
-.progress[data-level="10"], .progress[data-level="0"] {
+/* 0–24: グレー */
+.progress[data-level="20"],
+.progress[data-level="15"],
+.progress[data-level="10"],
+.progress[data-level="5"],
+.progress[data-level="0"] {
   background: #7f8c8d; /* グレー */
 }
+

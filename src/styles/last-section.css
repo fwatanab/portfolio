@@ -1,0 +1,57 @@
+.last-section {
+  background: #f9f9f9;
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.last-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.last-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.closing-message {
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact-button.github {
+  background: #24292e;
+  color: #fff;
+}
+
+.contact-button.github:hover {
+  background: #444c56;
+}
+
+.contact-button.mail {
+  background: #007bff;
+  color: #fff;
+}
+
+.contact-button.mail:hover {
+  background: #0056b3;
+}
+

@@ -1,0 +1,182 @@
+/* easychat-detail.css */
+
+/* EasyChatDetail専用スコープ */
+.easychat-detail {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2c2f33; /* Discord風ダーク背景 */
+  color: #ffffff;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* プロジェクト名のスタイル */
+.easychat-detail .project-name {
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* メインカード */
+.easychat-card {
+  width: 90%;
+  max-width: 900px;
+  background-color: #23272a; /* Discordチャット背景風 */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* セクションタイトル */
+.easychat-card h2 {
+  color: #66ccff;
+  border-bottom: 2px solid #7289da;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.easychat-card h3 {
+  display: inline-block; /* 幅は文字に合わせる */
+  background-color: #23272a; /* カードと同系色 */
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 12px; /* 丸みをつける */
+  font-size: 1rem;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+
+.easychat-card h3::before {
+  content: "▶ ";
+  color: #66ccff; /* 水色 */
+}
+
+/* セクション本文 */
+.easychat-card p,
+.easychat-card li {
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* リストスタイル */
+.easychat-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* テーブルスタイル */
+.easychat-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.easychat-card th,
+.easychat-card td {
+  padding: 10px;
+  border: 1px solid #2c2f33;
+  color: #ffffff;
+  text-align: left;
+}
+
+.easychat-card th {
+  background-color: #7289da;
+  color: #ffffff;
+}
+
+/* 画像スタイル */
+.easychat-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #99aab5;
+}
+
+/* GitHubリンク風 */
+.easychat-card .github {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.easychat-card .github a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #2c2f33;
+  background-color: #7289da;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.easychat-card .github a:hover {
+  background-color: #99aab5;
+  transform: translateY(-2px);
+}
+
+.easychat-card .github a:active {
+  transform: translateY(1px);
+}
+
+/* メッセージ風スタイル（チャットっぽさを演出） */
+.easychat-card .message {
+  background-color: #2c2f33;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 5px 0;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.easychat-card .message strong {
+  color: #66ccff;
+}
+
+.easychat-card .timestamp {
+  font-size: 0.8em;
+  color: #99aab5;
+  text-align: right;
+  margin-top: 5px;
+}
+
+/* コードブロック風 */
+.easychat-card pre {
+  background-color: #23272a;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .easychat-detail {
+    padding: 20px;
+  }
+
+  .easychat-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .easychat-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .easychat-card th,
+  .easychat-card td {
+    font-size: 0.9rem;
+  }
+
+  .easychat-card .github a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+

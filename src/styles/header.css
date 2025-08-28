@@ -1,3 +1,4 @@
+/* ヘッダー */
 header {
   background-color: #333333;
   color: #ffffff;
@@ -7,9 +8,16 @@ header {
   align-items: center;
   z-index: 1000;
   position: fixed;
-  top: 0; /* 明示的に画面上部に固定 */
+  top: 0;
   left: 0;
-  box-sizing: border-box; /* パディングを含めて横幅100%に */
+  box-sizing: border-box;
+}
+
+/* タイトル */
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-right: 20px;
 }
 
 /* ナビゲーション */
@@ -33,15 +41,23 @@ nav ul li button {
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* ホバー時の変化 */
 nav ul li button:hover {
   text-decoration: underline;
+  color: #f39c12; /* ホバー時に色を変更 */
+  transform: scale(1.1); /* ボタンを少し拡大 */
 }
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   /* 必要であれば最小限だけ残す */
+  header h1 {
+    font-size: 1.4rem; /* モバイルではタイトルを少し小さく */
+  }
+
   nav ul {
     gap: 10px;
     flex-wrap: wrap; /* 足りなければ折り返し */
@@ -50,5 +66,9 @@ nav ul li button:hover {
 
   header {
     padding: 10px; /* コンパクトに */
+  }
+
+  nav ul li button {
+    font-size: 0.9rem; /* モバイルでボタンサイズを少し小さく */
   }
 }

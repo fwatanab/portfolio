@@ -9,7 +9,8 @@ import MinishellDetail from "./pages/MinishellDetail";
 import Cub3DDetail from "./pages/Cub3DDetail";
 import EasyChatDetail from "./pages/EasyChatDetail";
 import InceptionDetail from "./pages/InceptionDetail";
-import PuyoGameDetail from "./pages/PuyoGameDetail";
+import FlappyBirdDetail from "./pages/FlappyBirdDetail";
+// import PuyoGameDetail from "./pages/PuyoGameDetail";
 
 const App = (): JSX.Element => {
   return (
@@ -24,7 +25,7 @@ const App = (): JSX.Element => {
             <Route path="/projects/cub3D" element={<Cub3DDetail />} />
             <Route path="/projects/easyChat" element={<EasyChatDetail />} />
             <Route path="/projects/inception" element={<InceptionDetail />} />
-            <Route path="/projects/puyoGame" element={<PuyoGameDetail/>} />
+            <Route path="/projects/flappyBird" element={<FlappyBirdDetail />} />
           </Routes>
         </main>
         <Footer />

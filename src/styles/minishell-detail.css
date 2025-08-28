@@ -37,6 +37,12 @@
   padding-bottom: 5px;
 }
 
+.minishell h2::before {
+  content: "$> ";
+  color: #4af626; /* シェルっぽい緑 */
+  font-weight: bold;
+}
+
 .minishell p,
 .minishell li {
   line-height: 1.6;
@@ -102,10 +108,6 @@
 
 .minishell .github a:active {
   transform: translateY(1px);
-}
-
-.minishell .github a::before {
-  content: "🔗 ";
 }
 
 /* レスポンシブ対応 */

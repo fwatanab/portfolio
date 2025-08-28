@@ -7,6 +7,10 @@
   background-color: #fffbf2;
 }
 
+.projects h2 {
+  margin-bottom: 1rem;
+}
+
 /* 背景画像 */
 .scroll-container {
   display: flex;
@@ -83,7 +87,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between; /* 左右端に配置 */
-  padding: 0 20px; /* 左右にパディングを追加 */
+  padding: 2rem; /* 左右にパディングを追加 */
 }
 
 .scroll-buttons button {
@@ -91,7 +95,7 @@
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 3rem;
   padding: 10px;
   border-radius: 50%;
 }
@@ -126,4 +130,25 @@
 
 .indicator-dot.active {
   background-color: #007bff;
+}
+
+/* ===== ブレークポイントで最終調整 ===== */
+@media (max-width: 768px) {
+  .scroll-container {
+    height: clamp(280px, 46vh, 520px);
+  }
+  .project-item {
+    margin-left: clamp(0.5rem, 1.5vw, 1rem);
+    max-width: min(92%, 520px);
+  }
+}
+
+/* とても広い画面でカードが小さく見えすぎないように */
+@media (min-width: 1400px) {
+  .scroll-container {
+    height: clamp(520px, 52vh, 760px);
+  }
+  .project-item {
+    max-width: 640px;
+  }
 }

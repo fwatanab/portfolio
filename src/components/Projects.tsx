@@ -9,34 +9,34 @@ const projects = [
     description: "C言語でBashを実装\nパイプ処理・リダイレクト対応",
     techStack: ["C"],
     link: "/projects/minishell",
-    backgroundImage: "images/home/minishell-img.jpg"
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/home/minishell-img.jpg)`
   },
   {
     name: "cub3d",
     description: "レイトレーシング技術を用いた3Dエンジン\nWASD移動 & 視点操作可能",
     techStack: ["C", "MinilibX"],
     link: "/projects/cub3D",
-    backgroundImage: "images/home/cub3d-img.png"
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/home/cub3d-img.jpg)`
   },
   {
     name: "easyChat",
     description: "WebSocketを活用したリアルタイムチャット\nReact + Go + MySQL構成",
     techStack: ["React", "Go", "MySQL"],
     link: "/projects/easyChat",
-    backgroundImage: "images/home/easychat-img.png"
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/home/easychat-img.jpg)`
   },
   {
     name: "inception",
     description: "Docker ComposeでWeb3層アーキテクチャを構築\nNginx + WordPress + MariaDB", techStack: ["Docker", "nginx", "MariaDB", "WordPress"],
     link: "/projects/inception",
-    backgroundImage: "images/home/inception-img.png"
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/home/inception-img.jpg)`
   },
   {
     name: "flappyBird",
     description: "Kivyで実装したFlappy Bird風ゲーム\nPython + Kivy構成",
     techStack: ["Python", "Kivy"],
     link: "/projects/flappyBird",
-    backgroundImage: "images/home/flappybird-img.png"
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/home/flappybird-img.jpg)`
 //  },
 //  {
 //    name: "puyoGame",

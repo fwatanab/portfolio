@@ -65,19 +65,19 @@ const MinishellDetail = (): JSX.Element => {
         <section className="demonstration">
           <h2>デモンストレーション</h2>
           <h3>minishellの起動</h3>
-            <img src="/images/minishell/bunner.png" alt="minishellの起動" />
+            <img src={`${process.env.PUBLIC_URL}/images/minishell/bunner.png`} alt="minishellの起動" />
           <h3>基本コマンドの実行</h3>
-            <img src="/images/minishell/normal_command.png" alt="基本コマンドの実行" />
+            <img src={`${process.env.PUBLIC_URL}/images/minishell/normal_command.png`} alt="基本コマンドの実行" />
           <h3>環境変数の展開</h3>
-            <img src="/images/minishell/export.png" alt="環境変数の展開" />
+            <img src={`${process.env.PUBLIC_URL}/images/minishell/export.png`} alt="環境変数の展開" />
           <h3>リダイレクト</h3>
-            <img src="/images/minishell/redirect.png" alt="リダイレクト" />
+            <img src={`${process.env.PUBLIC_URL}/images/minishell/redirect.png`} alt="リダイレクト" />
           <h3>パイプ処理</h3>
-            <img src="/images/minishell/pipe.png" alt="パイプ処理" />
+            <img src={`${process.env.PUBLIC_URL}/images/minishell/pipe.png`} alt="パイプ処理" />
           <h3>ビルトインコマンド</h3>
-            <img src="/images/minishell/built-in.png" alt="ビルトインコマンド" />
+            <img src={`${process.env.PUBLIC_URL}/images/minishell/built-in.png`} alt="ビルトインコマンド" />
           <h3>シグナルハンドリング</h3>
-            <img src="/images/minishell/signal.png" alt="シグナルハンドリング" />
+            <img src={`${process.env.PUBLIC_URL}/images/minishell/signal.png`} alt="シグナルハンドリング" />
         </section>
 
         <section className="comment">

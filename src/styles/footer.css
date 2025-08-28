@@ -1,15 +1,55 @@
+/* footer.css */
 footer {
-  padding: 10px 20px;
+  padding: 20px;
   text-align: center;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #333333; /* 暗い背景 */
+  color: #ffffff;           /* 白文字 */
+  font-size: 0.95rem;
+  border-top: 1px solid #444; /* 上に控えめなライン */
 }
 
+footer p {
+  margin: 6px 0;
+}
+
+/* リンクコンテナ */
+.footer-links {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* リンクの基本 */
 footer a {
-  color: #1e90ff;
+  color: #1e90ff; /* 鮮やかな青 */
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 footer a:hover {
+  color: #63b3ff; /* 少し明るい青に */
   text-decoration: underline;
+  transform: translateY(-2px);
 }
+
+footer a:active {
+  transform: translateY(1px);
+}
+
+/* メッセージ部分 */
+.footer-message {
+  margin-top: 12px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+

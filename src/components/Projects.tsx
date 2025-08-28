@@ -138,8 +138,8 @@ const Projects = (): JSX.Element => {
       </div>
 
       <div className="scroll-buttons">
-        <button className="scroll-left" onClick={() => handleScroll('left')}>←</button>
-        <button className="scroll-right" onClick={() => handleScroll('right')}>→</button>
+        <button className="scroll-left" onClick={() => handleScroll('left')}>&lt;</button>
+        <button className="scroll-right" onClick={() => handleScroll('right')}>&gt;</button>
       </div>
 
       {/* インジケーター */}

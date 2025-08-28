@@ -8,11 +8,11 @@ const skills = [
     items: [
       { name: "C", level: 75, description: "42Tokyoで学習の中心として使用。ライブラリを制限された環境でシェルや3D描画エンジンなどを開発。" },
       { name: "C++", level: 65, description: "Cから発展して学習。SDL2を用いたGUIゲーム開発でオブジェクト指向を実践的に経験。" },
-      { name: "React", level: 50, description: "ポートフォリオサイトやチャットアプリのフロント実装で使用。コンポーネント設計や状態管理の基本を理解。" },
+      { name: "React", level: 55, description: "ポートフォリオサイトやチャットアプリのフロント実装で使用。コンポーネント設計や状態管理の基本を理解。" },
       { name: "Docker", level: 60, description: "Docker Composeを用いたWebサーバー構築経験あり。.envからの自動セットアップなども実践。" },
       { name: "MySQL", level: 50, description: "Webアプリにおけるデータ設計・取得・保守を経験。基本的なクエリ操作に対応可能。" },
-      { name: "Python", level: 45, description: "補助スクリプト作成や個人学習に使用。扱いやすさとデータ処理への応用も学習中。" },
-      { name: "Go", level: 35, description: "リアルタイム通信アプリでバックエンド処理に使用。WebSocketのハンドリング経験あり。" },
+      { name: "Python", level: 45, description: "ゲーム開発や補助スクリプト作成を通じて活用。扱いやすさとデータ処理・GUI開発への応用を学習中。" },
+      { name: "Go", level: 50, description: "リアルタイム通信アプリでのWebSocket実装経験に加え、進行中の個人開発でDB連携やAPI設計を実践中。" },
     ],
   },
   {
@@ -40,7 +40,7 @@ const Skills = (): JSX.Element => {
         >
           {showGuideline ? "評価基準を隠す" : "評価基準を表示"}
         </button>
-        
+
         {showGuideline && (
           <div className="skill-guideline">
             <table>
@@ -79,6 +79,9 @@ const Skills = (): JSX.Element => {
                 </tr>
               </tbody>
             </table>
+            <p className="guideline-note">
+              ※あくまで自己評価に基づいた目安であり、今後の学習や経験によって変化します。
+            </p>
           </div>
         )}
       </div>

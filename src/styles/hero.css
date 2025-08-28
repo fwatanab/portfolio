@@ -5,7 +5,10 @@
   align-items: center;
   text-align: center;
   height: calc(100vh - 80px); /* ヘッダー分差し引き */
-  background-color: #f0f0f0;
+  background-image: url("../../public/images/home/hero-img.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 2rem;
 }
 
@@ -16,14 +19,14 @@
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   line-height: 1.8;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   max-width: 700px;
   margin-left: auto;

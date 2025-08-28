@@ -3,17 +3,17 @@
 	color: #e2e8f0;
 	padding: 40px 20px;
 	min-height: 100vh;
-  }
-  
-  .inception-detail .project-name {
+}
+
+.inception-detail .project-name {
 	font-size: 35px;
 	margin-top: 20px;
 	margin-bottom: 30px;
 	text-align: center;
 	color: #38bdf8;
-  }
-  
-  .inception {
+}
+
+.inception {
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 20px;
@@ -23,102 +23,101 @@
 	box-shadow: 0 0 20px rgba(15, 23, 42, 0.7);
 	font-family: 'Courier New', Courier, monospace;
 	animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  /* セクション */
-  .inception section {
+}
+/* セクション */
+.inception section {
 	margin-bottom: 30px;
 	padding: 1rem;
 	background-color: #0f172a;
 	border-left: 4px solid #38bdf8;
 	border-radius: 8px;
-  }
-  
-  /* 見出し */
-  .inception h2 {
+}
+
+/* 見出し */
+.inception h2 {
 	font-size: 1.6rem;
 	color: #facc15;
 	padding-bottom: 5px;
 	margin-bottom: 15px;
-  }
-  
-  .inception h2 + p,
-  .inception h2 + ul {
+}
+
+.inception h2 + p,
+.inception h2 + ul {
 	margin-top: 10px;
-  }
-  
-  /* リスト */
-  .inception ul {
+}
+
+/* リスト */
+.inception ul {
 	list-style-type: disc;
 	padding-left: 20px;
 	margin-bottom: 20px;
-  }
-  
-  .inception li {
+}
+
+.inception li {
 	margin-bottom: 8px;
-  }
-  
-  /* テキスト */
-  .inception p, .inception li {
+}
+
+/* テキスト */
+.inception p, .inception li {
 	line-height: 1.6;
-  }
-  
-  .inception a {
+}
+
+.inception a {
 	color: #60a5fa;
 	text-decoration: none;
 	font-weight: bold;
-  }
-  
-  .inception a:hover {
+}
+
+.inception a:hover {
 	text-decoration: underline;
-  }
-  
-  /* テーブル */
-  .inception table {
+}
+
+/* テーブル */
+.inception table {
 	width: 100%;
 	border-collapse: collapse;
 	margin-top: 1rem;
 	background-color: #0f172a;
 	border: 1px solid #334155;
-  }
-  
-  .inception th,
-  .inception td {
+}
+
+.inception th,
+.inception td {
 	padding: 0.75rem;
 	border: 1px solid #334155;
 	text-align: left;
-  }
-  
-  .inception th {
+}
+
+.inception th {
 	background-color: #1e293b;
 	color: #f8fafc;
-  }
+}
 
-  .inception .usage ol {
+.inception .usage ol {
 	counter-reset: step;
 	list-style: none;
 	padding-left: 0;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-  }
-  
-  .inception .usage li {
+}
+
+.inception .usage li {
 	counter-increment: step;
 	margin-bottom: 1.2rem;
 	position: relative;
 	padding-left: 2rem;
 	line-height: 1.6;
-  }
-  
-  .inception .usage li::before {
+}
+
+.inception .usage li::before {
 	content: counter(step) ".";
 	position: absolute;
 	left: 0;
 	color: #facc15; /* amber-400 */
 	font-weight: bold;
-  }
-  
-  .inception .usage pre {
+}
+
+.inception .usage pre {
 	background-color: #1e293b;
 	color: #e2e8f0;
 	padding: 0.75rem 1rem;
@@ -127,37 +126,37 @@
 	margin-bottom: 1rem;
 	font-size: 0.95rem;
 	overflow-x: auto;
-  }
-  
-  .inception .usage code {
+}
+
+.inception .usage code {
 	background-color: #1e293b;
 	color: #93c5fd;
 	padding: 0.2rem 0.4rem;
 	border-radius: 4px;
 	font-size: 0.95rem;
 	font-family: 'Courier New', Courier, monospace;
-  }
+}
 
-  /* GitHubセクション */
-  .inception .github {
+/* GitHubセクション */
+.inception .github {
 	text-align: center;
-  }
-  
-  .inception .github a {
+}
+
+.inception .github a {
 	display: inline-block;
 	padding: 10px 20px;
-	background-color: #4caf50;
-	color: #ffffff;
+	background-color: #38bdf8;
+	color: #f6f7f8;
 	border-radius: 5px;
 	transition: background-color 0.3s;
-  }
-  
-  .inception .github a:hover {
-	background-color: #388e3c;
-  }
-  
-  /* アニメーション */
-  @keyframes fadeIn {
+}
+
+.inception .github a:hover {
+	background-color: #2fa3d6;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
 	from {
 	  opacity: 0;
 	  transform: translateY(16px);
@@ -166,18 +165,18 @@
 	  opacity: 1;
 	  transform: translateY(0);
 	}
-  }
-  
-  /* レスポンシブ対応 */
-  @media (max-width: 768px) {
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
 	.inception {
 	  padding: 15px;
 	}
-  
+
 	.inception h2 {
 	  font-size: 1.4rem;
 	}
-  
+
 	.inception ul {
 	  padding-left: 15px;
 	}

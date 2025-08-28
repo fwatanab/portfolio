@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/app.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,7 +10,6 @@ import Cub3DDetail from "./pages/Cub3DDetail";
 import EasyChatDetail from "./pages/EasyChatDetail";
 import InceptionDetail from "./pages/InceptionDetail";
 import FlappyBirdDetail from "./pages/FlappyBirdDetail";
-// import PuyoGameDetail from "./pages/PuyoGameDetail";
 
 const App = (): JSX.Element => {
   return (

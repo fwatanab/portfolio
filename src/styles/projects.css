@@ -1,94 +1,129 @@
+/* Projectsセクション */
 .projects {
-  padding: 20px;
-  background-color: #ffffff;
+  padding: 2rem;
   text-align: center;
+  position: relative; /* 背景画像を表示するために相対位置に */
+  overflow: hidden; /* 画面外にはみ出ないように */
+  background-color: #fffbf2;
 }
 
-/* プロジェクトリストを横スクロール可能に */
-.project-list {
+/* 背景画像 */
+.scroll-container {
   display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 10px;
-  scrollbar-width: thin;
-  scrollbar-color: #cccccc transparent;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* 高さ調整 */
+  position: relative; /* 矢印ボタンを相対位置で配置 */
 }
 
-/* スクロールバーのカスタマイズ（Webkit系ブラウザ用） */
-.project-list::-webkit-scrollbar {
-  height: 6px;
-}
-
-.project-list::-webkit-scrollbar-thumb {
-  background: #aaaaaa;
-  border-radius: 3px;
-}
-
-/* プロジェクトカードのスタイル（正方形・サイズアップ） */
-.project-item {
-  flex: 0 0 auto;
-  width: 360px; /* 幅 */
-  height: 160px; /* 高さ（正方形） */
-  padding: 20px;
-  border: 1px solid #dddddd;
+.project-display {
+  display: flex;
+  justify-content: flex-start; /* アイテムを左寄せ */
+  align-items: flex-end; /* アイテムを下に配置 */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-radius: 8px;
-  background-color: #f9f9f9;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: background 0.5s ease; /* 背景の切り替えを滑らかに */
+}
+
+/* プロジェクトアイテム */
+.project-item {
+  text-align: center;
   cursor: pointer;
-  overflow: hidden; /* はみ出し防止 */
-  text-align: center; /* テキストを中央揃え */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 子要素を中央配置 */
-  justify-content: center; /* 中央寄せ */
+  color: #e0dfdf;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8); /* 透明度を減らして背景を暗く */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  margin-left: 2rem; /* 左側に寄せる */
+  margin-bottom: 1rem;
+  z-index: 2; /* 矢印ボタンより前面に表示 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* 少し影をつけて浮き上がり感を出す */
 }
 
-/* ホバー時のエフェクト */
 .project-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: #f0f0f0;
+  transform: scale(1.05);
 }
 
-/* タイトルのスタイル */
 .project-item h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-  word-wrap: break-word; /* 長いタイトルを折り返し */
-  white-space: normal;
-  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 文字に影を付けて視認性を強化 */
 }
 
-/* 説明文のスタイル（改行対応） */
-.project-item p {
-  font-size: 0.9rem;
-  color: #333333;
-  margin: 0 0 10px;
-  text-align: center;
-  word-wrap: break-word; /* 自動改行を有効化 */
-  white-space: normal;
-  overflow: hidden;
-  display: block; /* 自然な改行 */
+.project-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
-/* 技術スタック（バッジ形式） */
 .tech-stack {
-  margin-top: auto;
   display: flex;
-  flex-wrap: wrap; /* はみ出さず折り返す */
-  justify-content: center; /* 中央揃え */
-  gap: 5px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .tech-badge {
-  background-color: #ff7f50;
-  color: #ffffff;
+  background-color: #007bff;
+  color: white;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100px; /* 長すぎる技術名を防ぐ */
+}
+
+/* 矢印ボタン */
+.scroll-buttons {
+  position: absolute; /* .project-display内で絶対位置に配置 */
+  top: 50%; /* 親要素の中央に配置 */
+  left: 0;
+  right: 0;
+  transform: translateY(-50%); /* 縦方向で中央揃え */
+  z-index: 10; /* 矢印ボタンを最前面に配置 */
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* 左右端に配置 */
+  padding: 0 20px; /* 左右にパディングを追加 */
+}
+
+.scroll-buttons button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.scroll-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-left {
+  left: 10px; /* 左端に配置 */
+}
+
+.scroll-right {
+  right: 10px; /* 右端に配置 */
+}
+
+/* インジケーター */
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.indicator-dot.active {
+  background-color: #007bff;
 }

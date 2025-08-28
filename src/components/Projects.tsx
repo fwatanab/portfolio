@@ -47,100 +47,69 @@ const projects = [
   }
 ];
 
-//const Projects = (): JSX.Element => {
-//  const navigate = useNavigate();
-//  const containerRef = useRef<HTMLDivElement>(null);
-//  const [scrollIndex, setScrollIndex] = useState(0);
-//
-//  useEffect(() => {
-//    const container = containerRef.current;
-//    if (!container) return;
-//
-//    // 自動スクロールのインターバル
-//    const interval = setInterval(() => {
-//      setScrollIndex(prevIndex => {
-//        const nextIndex = prevIndex+ 1;
-//        if (nextIndex >= projects.length) {
-//          return 0;
-//        }
-//        return nextIndex;
-//      });
-//    }, 5000); // 5秒ごとにスクロール
-//    return () => clearInterval(interval); // クリーンアップ
-//  }, []);
-//
-//  const currentProject = projects[scrollIndex];
-//
-//  // 手動スクロールのための関数
-//  const handleScroll = (direction: 'left' | 'right') => {
-//    setScrollIndex(prevIndex => {
-//      if (direction === 'left') {
-//        return prevIndex === 0 ? projects.length - 1 : prevIndex - 1; // 0の時に左矢印が押されると最終に戻る
-//      } else {
-//        return prevIndex === projects.length - 1 ? 0 : prevIndex + 1; // 最後の時に右矢印が押されると1に戻る
-//      }
-//    });
-//  };
-//
-//  return (
-//    <section id="projects" className="projects">
-//      <h2>プロジェクト一覧</h2>
-//      <div className="project-display">
-//        <div className="project-item" onClick={() => navigate(currentProject.link)}>
-//          <h3>{currentProject.name}</h3>
-//          <p className="project-description">
-//            {currentProject.description.split("\n").map((line, i) => (
-//              <React.Fragment key={i}>
-//                {line}
-//                <br />
-//              </React.Fragment>
-//            ))}
-//          </p>
-//          <div className="tech-stack">
-//            {currentProject.techStack.map((tech, i) => (
-//              <span key={i} className="tech-badge">{tech}</span>
-//            ))}
-//          </div>
-//        </div>
-//      </div>
-//      <div className="scroll-buttons">
-//        <button onClick={() => handleScroll('left')}>←</button>
-//        <button onClick={() => handleScroll('right')}>→</button>
-//      </div>
-//    </section>
-//  );
-//};
-
 const Projects = (): JSX.Element => {
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollIndex, setScrollIndex] = useState(0);
 
-  const currentProject = projects[scrollIndex];
+  // ⬇ 自動スクロール用タイマー
+  const autoplayRef = useRef<number | null>(null);
+  const AUTOPLAY_MS = 5000;
+
+  const startAutoplay = () => {
+    // いったん止めてから開始（二重起動防止）
+    if (autoplayRef.current !== null) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+    autoplayRef.current = window.setInterval(() => {
+      setScrollIndex((prev) => (prev + 1 >= projects.length ? 0 : prev + 1));
+    }, AUTOPLAY_MS);
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayRef.current !== null) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setScrollIndex(prevIndex => {
-        const nextIndex = prevIndex + 1;
-        if (nextIndex >= projects.length) {
-          return 0;  // 末尾に達したら最初に戻る
-        }
-        return nextIndex;
-      });
-    }, 5000); // 5秒ごとにスクロール
-    return () => clearInterval(interval); // クリーンアップ
+    startAutoplay();
+    return () => stopAutoplay(); // クリーンアップ
   }, []);
 
-  // 手動スクロールのための関数
+  // 手動スクロール（クリック時に自動スクロールをリセット）
   const handleScroll = (direction: 'left' | 'right') => {
     setScrollIndex(prevIndex => {
       if (direction === 'left') {
-        return prevIndex === 0 ? projects.length - 1 : prevIndex - 1; // 0の時に左矢印が押されると最終に戻る
+        return prevIndex === 0 ? projects.length - 1 : prevIndex - 1;
       } else {
-        return prevIndex === projects.length - 1 ? 0 : prevIndex + 1; // 最後の時に右矢印が押されると1に戻る
+        return prevIndex === projects.length - 1 ? 0 : prevIndex + 1;
       }
     });
+    // ← 手動操作のたびにタイマーをリセット
+    startAutoplay();
   };
+
+  // 矢印キーでも同じ処理をする
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        setScrollIndex(prev => (prev === 0 ? projects.length - 1 : prev - 1));
+        startAutoplay(); // ← リセット
+      }
+      if (e.key === 'ArrowRight') {
+        setScrollIndex(prev => (prev === projects.length - 1 ? 0 : prev + 1));
+        startAutoplay(); // リセット
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []); // 依存なしでグローバル
+
+
+  const currentProject = projects[scrollIndex];
 
   return (
     <section id="projects" className="projects">

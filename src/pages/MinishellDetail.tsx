@@ -7,7 +7,7 @@ const MinishellDetail = (): JSX.Element => {
       <h2 className="project-name">minishell</h2>
       <div className="minishell">
         <section className="summary">
-          <h2>🎉 プロジェクト概要</h2>
+          <h2>プロジェクト概要</h2>
           <p>
             minishellは、Bash風の独自シェルをC言語で実装した42Tokyoの課題です。
             低レイヤーの理解を深め、POSIX準拠のシェル機能を再現しています。
@@ -16,7 +16,7 @@ const MinishellDetail = (): JSX.Element => {
         </section>
 
         <section className="environment">
-          <h2>💻 開発環境と要件</h2>
+          <h2>開発環境と要件</h2>
           <ul>
             <li>言語: C</li>
             <li>ライブラリ: GNU readline</li>
@@ -25,7 +25,7 @@ const MinishellDetail = (): JSX.Element => {
         </section>
 
         <section className="function">
-          <h2>✨ 詳細機能一覧</h2>
+          <h2>詳細機能一覧</h2>
             <table>
               <thead>
                 <tr>
@@ -63,7 +63,7 @@ const MinishellDetail = (): JSX.Element => {
         </section>
 
         <section className="demonstration">
-          <h2>🚀 デモンストレーション</h2>
+          <h2>デモンストレーション</h2>
           <h3>minishellの起動</h3>
             <img src="/images/minishell/bunner.png" alt="minishellの起動" />
           <h3>基本コマンドの実行</h3>
@@ -81,7 +81,7 @@ const MinishellDetail = (): JSX.Element => {
         </section>
 
         <section className="comment">
-          <h2>🏆 最後に</h2>
+          <h2>最後に</h2>
           <p>
             POSIXシステムコールを活用したシェルプログラムをC言語で実装し、UNIXシステムの基礎理解とプロセス制御の知識を深めました。
             グループプロジェクトを通じて、開発と調整スキルも向上しました。
@@ -95,7 +95,7 @@ const MinishellDetail = (): JSX.Element => {
               target="_blank"
               rel="noreferrer"
             >
-              リポジトリを見る
+              ソースコードを見る
             </a>
         </section>
       </div>

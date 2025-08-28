@@ -9,39 +9,68 @@ const Header = (): JSX.Element => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     const header = document.querySelector('header') as HTMLElement;
-    const headerHeight = header ? header.offsetHeight : 0;  // ヘッダーの高さを取得
+    const headerHeight = header ? header.offsetHeight : 0;
 
     if (section) {
-      // スクロールする位置をヘッダー分だけ調整
       window.scrollTo({
-        top: section.offsetTop - headerHeight,  // ヘッダーの高さを引いてスクロール
+        top: section.offsetTop - headerHeight,
         behavior: 'smooth',
       });
     }
   };
 
-  // クリック時の処理
+  // Homeに戻ってからスクロール or そのままスクロール
   const handleNavigation = (sectionId: string) => {
     if (window.location.pathname !== "/") {
-      // Home に移動後、スクロール
       navigate("/", { replace: true });
       setTimeout(() => scrollToSection(sectionId), 100);
     } else {
-      // 直接スクロール
       scrollToSection(sectionId);
     }
   };
 
+  // 左上「Portfolio」をクリックしたらトップへ
+  const handleClickPortfolio = () => {
+    handleNavigation("top");
+  };
+
+  // プロジェクト詳細ページへ移動（ルーティング）
+  const goProject = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <header>
-      <h1>Portfolio</h1>
+      {/* h1自体をボタン的にクリック可能に */}
+      <h1
+        className="brand"
+        onClick={handleClickPortfolio}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && handleClickPortfolio()}
+      >
+        Portfolio
+      </h1>
+
       <nav>
         <ul>
           <li><button onClick={() => handleNavigation("top")}>トップ</button></li>
           <li><button onClick={() => handleNavigation("profile")}>プロフィール</button></li>
           <li><button onClick={() => handleNavigation("skills")}>スキル</button></li>
-          <li><button onClick={() => handleNavigation("projects")}>プロジェクト</button></li>
-          <li><button onClick={() => handleNavigation("contact")}>お問い合わせ</button></li>
+
+          {/* ドロップダウン付きのプロジェクト */}
+          <li className="has-dropdown">
+            <button onClick={() => handleNavigation("projects")}>プロジェクト</button>
+            <ul className="dropdown" aria-label="プロジェクト一覧">
+              <li><button onClick={() => goProject("/projects/minishell")}>minishell</button></li>
+              <li><button onClick={() => goProject("/projects/cub3D")}>cub3d</button></li>
+              <li><button onClick={() => goProject("/projects/easyChat")}>easyChat</button></li>
+              <li><button onClick={() => goProject("/projects/inception")}>inception</button></li>
+              <li><button onClick={() => goProject("/projects/flappyBird")}>flappyBird</button></li>
+            </ul>
+          </li>
+
+          <li><button onClick={() => handleNavigation("last")}>最後に</button></li>
         </ul>
       </nav>
     </header>
@@ -49,3 +78,4 @@ const Header = (): JSX.Element => {
 };
 
 export default Header;
+

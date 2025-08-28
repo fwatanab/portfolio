@@ -111,7 +111,7 @@ const InceptionDetail = (): JSX.Element => {
             target="_blank"
             rel="noreferrer"
           >
-            リポジトリを見る
+            ソースコードを見る
           </a>
         </section>
       </div>

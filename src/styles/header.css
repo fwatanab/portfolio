@@ -1,38 +1,52 @@
-/* ヘッダー */
+/* ===== ヘッダー（固定） ===== */
 header {
-  background-color: #333333;
-  color: #ffffff;
-  width: 100vw;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* タイトル */
+/* タイトル（ブランドはクリック可） */
 header h1 {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-right: 20px;
+  margin: 0 20px 0 0;
 }
-
-/* ナビゲーション */
+header .brand {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+header .brand:hover,
+header .brand:focus-visible {
+  opacity: .9;
+  transform: translateY(-1px);
+  outline: none;
+}
+/* ===== ナビゲーション ===== */
 nav {
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
 }
-
 nav ul {
   display: flex;
   list-style: none;
-  gap: 15px;
+  gap: 0;
   margin: 0;
   padding: 0;
+  align-items: center;
+}
+nav ul li {
+  position: relative; /* ドロップダウンの基準 */
 }
 
 nav ul li button {
@@ -41,34 +55,118 @@ nav ul li button {
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 0.25s ease, transform 0.25s ease, background-color .2s ease;
 }
 
-/* ホバー時の変化 */
-nav ul li button:hover {
+nav ul li button:hover,
+nav ul li button:focus-visible {
   text-decoration: underline;
-  color: #f39c12; /* ホバー時に色を変更 */
-  transform: scale(1.1); /* ボタンを少し拡大 */
+  color: #f39c12;
+  transform: scale(1.06);
+  outline: none;
+  background-color: rgba(255,255,255,0.06);
 }
 
-/* レスポンシブ対応 */
+/* ===== ドロップダウン（プロジェクト） ===== */
+.has-dropdown .dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  padding: 8px;
+  display: none;                /* 初期は非表示 */
+  background: #222;             /* ダーク基調 */
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  z-index: 1001;
+}
+
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  margin: 2px 0;
+}
+.dropdown li button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: #e8e8e8;
+  transition: background-color .2s ease, transform .15s ease;
+}
+.dropdown li button:hover,
+.dropdown li button:focus-visible {
+  background: rgba(255,255,255,0.08);
+  transform: translateX(2px);
+  text-decoration: none;
+  outline: none;
+}
+
+/* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
-  /* 必要であれば最小限だけ残す */
+  header {
+    padding: 10px;
+  }
+
   header h1 {
-    font-size: 1.4rem; /* モバイルではタイトルを少し小さく */
+    font-size: 1.4rem;
+    margin-right: 12px;
+  }
+
+  nav {
+    justify-content: flex-end;
   }
 
   nav ul {
-    gap: 10px;
-    flex-wrap: wrap; /* 足りなければ折り返し */
-    justify-content: center;
-  }
-
-  header {
-    padding: 10px; /* コンパクトに */
+    gap: 8px;
+    flex-wrap: wrap;              /* はみ出す場合は折り返し */
+    justify-content: flex-end;
   }
 
   nav ul li button {
-    font-size: 0.9rem; /* モバイルでボタンサイズを少し小さく */
+    font-size: 0.95rem;
+    padding: 8px 10px;            /* タップ領域を確保 */
+    transform: none !important;   /* 過剰な拡大を抑制（誤タップ防止） */
+  }
+
+  /* ドロップダウンは画面幅に合わせて扱いやすく */
+  .has-dropdown .dropdown {
+    position: static;             /* 親に続いて配置（重なりを避ける） */
+    display: none;                /* デフォルト非表示 */
+    width: 100%;
+    min-width: 0;
+    margin-top: 6px;
+    padding: 6px;
+    border-radius: 8px;
+    background: #2a2a2a;
+    box-shadow: none;
+  }
+  .has-dropdown:focus-within .dropdown,
+  .has-dropdown:hover .dropdown {
+    display: block;               /* タップ（フォーカス）でも開く */
+  }
+
+  .dropdown li button {
+    padding: 10px 12px;
+    border-radius: 6px;
   }
 }
+
+/* さらに狭い場合の微調整 */
+@media (max-width: 420px) {
+  nav ul {
+    gap: 6px;
+  }
+  nav ul li button {
+    font-size: 0.9rem;
+    padding: 8px 8px;
+  }
+}
+

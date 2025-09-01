@@ -5,7 +5,7 @@
   align-items: center;
   text-align: center;
   height: calc(100vh - 80px); /* ヘッダー分差し引き */
-  background-image: url("../../public/images/home/hero-img.png");
+  background-image: url("/portfolio/public/images/home/hero-img.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,9 +50,25 @@
 }
 
 @media (max-width: 600px) {
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+    background-position: center top; /* 必要なら背景の表示位置調整 */
+  }
+
+  .hero-title {
+    font-size: 2rem; /* スマホ向けに小さく */
+  }
+
   .hero-subtitle {
     font-size: 1rem;
     padding: 0 1rem;
     text-align: center;
   }
+
+  .hero-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
+

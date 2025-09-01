@@ -20,8 +20,7 @@ header h1 {
   font-weight: bold;
   margin: 0 20px 0 0;
 }
-header .brand {
-  cursor: pointer;
+header .brand { cursor: pointer;
   user-select: none;
   transition: opacity .2s ease, transform .2s ease;
 }
@@ -109,6 +108,33 @@ nav ul li button:focus-visible {
   outline: none;
 }
 
+/* ===== PC（マウス環境）専用：隙間に“透明の橋”をかける。クリックは有効のまま ===== */
+@media (hover: hover) and (pointer: fine) {
+  /* クリック（focus）で開きっぱなしにしない */
+  .has-dropdown:focus-within .dropdown { display: none; }
+
+  /* hover中だけ開く（dropdown 上に乗っても開いたまま） */
+  .has-dropdown:hover .dropdown,
+  .has-dropdown .dropdown:hover { display: block; }
+
+  /* 隙間 8px を hover 判定できる透明帯で埋める（見た目は変えない） */
+  .has-dropdown { position: relative; }
+  .has-dropdown .dropdown {
+    /* ここは現状のまま（例：top: calc(100% + 8px);）でOK */
+    /* pointer-events はいじらない（クリックを有効のままにする） */
+  }
+  .has-dropdown .dropdown::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;   /* ← 隙間の高さに合わせる（現状 8px） */
+    height: 8px; /* ここを隙間ぶんに */
+    /* 透明のまま hover を拾う。クリックはこの帯では発生しないゾーンなので問題なし */
+    pointer-events: auto;
+  }
+}
+
 /* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
   header {
@@ -116,30 +142,25 @@ nav ul li button:focus-visible {
   }
 
   header h1 {
-    font-size: 1.4rem;
-    margin-right: 12px;
-  }
-
-  nav {
-    justify-content: flex-end;
+    font-size: 1.3rem;   /* タイトルも縮小 */
+    margin-right: 10px;
   }
 
   nav ul {
-    gap: 8px;
-    flex-wrap: wrap;              /* はみ出す場合は折り返し */
+    gap: 6px;
+    flex-wrap: nowrap;   /* 折り返さない */
     justify-content: flex-end;
   }
 
   nav ul li button {
-    font-size: 0.95rem;
-    padding: 8px 10px;            /* タップ領域を確保 */
-    transform: none !important;   /* 過剰な拡大を抑制（誤タップ防止） */
+    font-size: 0.85rem;  /* ボタンの文字サイズを縮小 */
+    padding: 2px 3px;    /* コンパクトに */
+    transform: none !important;
   }
 
-  /* ドロップダウンは画面幅に合わせて扱いやすく */
   .has-dropdown .dropdown {
-    position: static;             /* 親に続いて配置（重なりを避ける） */
-    display: none;                /* デフォルト非表示 */
+    position: static;
+    display: none;
     width: 100%;
     min-width: 0;
     margin-top: 6px;
@@ -150,23 +171,18 @@ nav ul li button:focus-visible {
   }
   .has-dropdown:focus-within .dropdown,
   .has-dropdown:hover .dropdown {
-    display: block;               /* タップ（フォーカス）でも開く */
-  }
-
-  .dropdown li button {
-    padding: 10px 12px;
-    border-radius: 6px;
+    display: block;
   }
 }
 
 /* さらに狭い場合の微調整 */
 @media (max-width: 420px) {
-  nav ul {
-    gap: 6px;
+  header h1 {
+    font-size: 1rem;
   }
   nav ul li button {
-    font-size: 0.9rem;
-    padding: 8px 8px;
+    font-size: 0.7rem;  /* さらに小さく */
+    padding: 1px 2px;
   }
 }
 

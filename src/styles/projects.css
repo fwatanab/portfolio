@@ -13,6 +13,8 @@
 
 /* 背景画像 */
 .scroll-container {
+  width: 100%;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +37,10 @@
 
 /* プロジェクトアイテム */
 .project-item {
+  max-width: 90vw;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
   text-align: center;
   cursor: pointer;
   color: #e0dfdf;
@@ -143,12 +149,27 @@
   }
 }
 
-/* とても広い画面でカードが小さく見えすぎないように */
-@media (min-width: 1400px) {
-  .scroll-container {
-    height: clamp(520px, 52vh, 760px);
+@media (max-width: 480px) {
+  .project-item h3 {
+    font-size: 1.4rem;
   }
-  .project-item {
-    max-width: 640px;
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .tech-badge {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .scroll-buttons {
+    padding: 1rem;
+  }
+
+  .scroll-buttons button {
+    font-size: 2.5rem;
+    padding: 6px;
   }
 }
+

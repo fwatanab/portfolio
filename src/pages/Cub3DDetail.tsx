@@ -60,7 +60,7 @@ const Cub3DDetail = (): JSX.Element => {
           <h2>サンプル映像</h2>
           <div className="message">
             <video
-              src={`${process.env.PUBLIC_URL}/images/cub3d/sample.mp4`}
+              src="/portfolio/images/cub3d/sample.mp4"
               controls
               width="100%"
               style={{ borderRadius: "5px" }}

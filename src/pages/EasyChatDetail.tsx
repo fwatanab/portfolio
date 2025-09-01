@@ -65,16 +65,16 @@ const EasyChatDetail = (): JSX.Element => {
           <h2>デモンストレーション :</h2>
           <h3>ログイン画面</h3>
           <div className="message">
-            <img src={`${process.env.PUBLIC_URL}/images/easychat/login.png`} alt="ログイン画面" />
+            <img src="/portfolio/images/easychat/login.png" alt="ログイン画面" />
           </div>
           <h3>チャット画面</h3>
           <div className="message">
-            <img src={`${process.env.PUBLIC_URL}/images/easychat/chat.png`} alt="チャット画面" />
+            <img src="/portfolio/images/easychat/chat.png" alt="チャット画面" />
           </div>
           <h3>サンプル映像</h3>
           <div className="message">
             <video
-              src={`${process.env.PUBLIC_URL}/images/easychat/sample.mp4`}
+              src="/portfolio/images/easychat/sample.mp4"
               controls
               width="100%"
               style={{ borderRadius: "5px" }}

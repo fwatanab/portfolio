@@ -72,7 +72,7 @@ const FlappyBirdDetail = (): JSX.Element => {
           <h3>サンプル映像</h3>
           <div className="message">
             <video
-              src={`${process.env.PUBLIC_URL}/images/flappybird/sample.mp4`}
+              src="/portfolio/images/flappybird/sample.mp4"
               controls
               width="100%"
               style={{ borderRadius: "5px" }}

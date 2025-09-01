@@ -6,7 +6,7 @@ const Profile = (): JSX.Element => {
     <section id="profile" className="profile-container">
       <div className="profile">
         <div className="profile-header">
-          <img className="profile-avatar" src={`${process.env.PUBLIC_URL}/images/home/profile-icon-img.png`} alt="fwatanab" />
+          <img className="profile-avatar" src="/portfolio/images/home/profile-icon-img.png" alt="fwatanab" />
           <div className="profile-info">
             <h1 className="profile-name">fwatanab <span className="realname">(本名: 渡邉楓太)</span></h1>
             <h2 className="profile-position">ITエンジニア</h2>

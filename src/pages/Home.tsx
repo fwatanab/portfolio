@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/home.css";
 import Hero from "../components/Hero";
 import Profile from "../components/Profile";
 import Skills from "../components/Skills";

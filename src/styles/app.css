@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+.app {
+	overflow-x: hidden;
+}
+
 main {
 	font-family: Arial, sans-serif;
 	margin-top: 60px;

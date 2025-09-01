@@ -5,7 +5,7 @@
   align-items: center;
   text-align: center;
   height: calc(100vh - 80px); /* ヘッダー分差し引き */
-  background-image: url("/portfolio/public/images/home/hero-img.png");
+  background-image: url("/portfolio/images/home/hero-img.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

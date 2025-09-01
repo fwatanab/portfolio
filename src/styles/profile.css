@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   padding: 40px 0;
-  background-image: url("../../public/images/home/profile-img.jpeg");
+  background-image: url("/portfolio/images/home/profile-img.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

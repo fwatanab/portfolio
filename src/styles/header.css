@@ -138,7 +138,7 @@ nav ul li button:focus-visible {
 /* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
   header {
-    padding: 10px;
+    padding: 15px;
   }
 
   header h1 {
@@ -179,10 +179,40 @@ nav ul li button:focus-visible {
 @media (max-width: 420px) {
   header h1 {
     font-size: 1rem;
+    padding: 5px;
   }
   nav ul li button {
     font-size: 0.7rem;  /* さらに小さく */
     padding: 1px 2px;
   }
+}
+
+/* ===== 1) ヘッダーの縦の太さを固定（フォントや余白は現状のまま） ===== */
+:root { --header-height: 64px; } /* 必要に応じて 60–72px で微調整OK */
+header { height: var(--header-height); }
+@media (max-width: 768px) { header { height: var(--header-height); } }
+@media (max-width: 420px) { header { height: var(--header-height); } }
+
+/* ===== 2) 縮小時のドロップダウンをヘッダーのフロー外に（巻き込み防止） ===== */
+@media (max-width: 768px) {
+  /* アンカーは親 <li> に */
+  .has-dropdown { position: relative; }
+
+  /* 既存の position: static; width:100% を上書きしてオーバーレイ表示に */
+  .has-dropdown .dropdown {
+    position: absolute !important;      /* ← フローから外す（ヘッダー高さに影響させない） */
+    top: calc(100% + 8px);              /* 既存の隙間 8px を維持 */
+    right: 0;
+    left: auto;
+    width: auto;                         /* 100% を解除 */
+    min-width: 200px;
+    max-width: min(92vw, 320px);         /* 画面外に出ないように制限 */
+    z-index: 1001;
+    /* 背景色・パディング・角丸などは既存指定をそのまま活かす */
+  }
+
+  /* スマホは hover 検出の副作用を避け、タップ（focus-within）のみで開く */
+  .has-dropdown:hover .dropdown { display: none !important; }
+  .has-dropdown:focus-within .dropdown { display: block !important; }
 }
 

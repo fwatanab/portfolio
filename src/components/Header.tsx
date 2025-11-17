@@ -62,9 +62,10 @@ const Header = (): JSX.Element => {
           <li className="has-dropdown">
             <button onClick={() => handleNavigation("projects")}>プロジェクト</button>
             <ul className="dropdown" aria-label="プロジェクト一覧">
+              <li><button onClick={() => goProject("/projects/chillow")}>Chillow</button></li>
+              <li><button onClick={() => goProject("/projects/taskHub")}>TaskHub</button></li>
               <li><button onClick={() => goProject("/projects/minishell")}>minishell</button></li>
               <li><button onClick={() => goProject("/projects/cub3D")}>cub3d</button></li>
-              <li><button onClick={() => goProject("/projects/easyChat")}>easyChat</button></li>
               <li><button onClick={() => goProject("/projects/inception")}>inception</button></li>
               <li><button onClick={() => goProject("/projects/flappyBird")}>flappyBird</button></li>
             </ul>
@@ -78,4 +79,3 @@ const Header = (): JSX.Element => {
 };
 
 export default Header;
-

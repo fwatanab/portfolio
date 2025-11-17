@@ -138,24 +138,25 @@ nav ul li button:focus-visible {
 /* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
   header {
-    padding: 15px;
+    padding: 15px 16px;
   }
 
   header h1 {
-    font-size: 1.3rem;   /* タイトルも縮小 */
-    margin-right: 10px;
+    font-size: 1.2rem;
+    margin-right: 8px;
   }
 
   nav ul {
-    gap: 6px;
-    flex-wrap: nowrap;   /* 折り返さない */
+    gap: 4px;
+    flex-wrap: nowrap;
     justify-content: flex-end;
   }
 
   nav ul li button {
-    font-size: 0.85rem;  /* ボタンの文字サイズを縮小 */
-    padding: 2px 3px;    /* コンパクトに */
+    font-size: 0.78rem;
+    padding: 2px 4px;
     transform: none !important;
+    text-align: right;
   }
 
   .has-dropdown .dropdown {
@@ -182,7 +183,7 @@ nav ul li button:focus-visible {
     padding: 5px;
   }
   nav ul li button {
-    font-size: 0.7rem;  /* さらに小さく */
+    font-size: 0.65rem;
     padding: 1px 2px;
   }
 }
@@ -215,4 +216,3 @@ header { height: var(--header-height); }
   .has-dropdown:hover .dropdown { display: none !important; }
   .has-dropdown:focus-within .dropdown { display: block !important; }
 }
-

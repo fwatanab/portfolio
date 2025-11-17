@@ -36,8 +36,8 @@ const Hero = (): JSX.Element => {
           自作関数で環境を構築してきた経験を通して「ゼロから組み立てる力」を身につけました。
         </p>
         <p className="hero-subtitle">
-          現在はC/C++を軸にしながら、ReactやPythonなどの扱いやすい言語も取り入れつつ、
-          フルスタックエンジニアとして実践力を磨いています。
+          現在はNext.jsやGo、Docker Composeを軸にWebアプリを設計・実装し、
+          UIからAPI、DBまでを自走できるフルスタックエンジニアとして実践力を磨いています。
         </p>
 
         <button type="button" className="hero-button" onClick={handleGoProjects}>
@@ -49,4 +49,3 @@ const Hero = (): JSX.Element => {
 };
 
 export default Hero;
-

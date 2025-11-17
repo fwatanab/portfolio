@@ -8,11 +8,13 @@ const skills = [
     items: [
       { name: "C", level: 75, description: "42Tokyoで学習の中心として使用。ライブラリを制限された環境でシェルや3D描画エンジンなどを開発。" },
       { name: "C++", level: 65, description: "Cから発展して学習。SDL2を用いたGUIゲーム開発でオブジェクト指向を実践的に経験。" },
-      { name: "React", level: 55, description: "ポートフォリオサイトやチャットアプリのフロント実装で使用。コンポーネント設計や状態管理の基本を理解。" },
-      { name: "Docker", level: 60, description: "Docker Composeを用いたWebサーバー構築経験あり。.envからの自動セットアップなども実践。" },
-      { name: "MySQL", level: 50, description: "Webアプリにおけるデータ設計・取得・保守を経験。基本的なクエリ操作に対応可能。" },
+      { name: "React / TypeScript", level: 70, description: "ChillowやTaskHubのフロント全体をReact + TypeScriptで構築。Tailwindや状態管理(Recoil)まで含めて自力で設計・実装。" },
+      { name: "Next.js & NextAuth", level: 60, description: "TaskHubでPages Router, NextAuth, API Routes, AppLayoutを組み合わせたフルスタック構成を実装。Prisma Adapter連携も経験。" },
+      { name: "Go", level: 65, description: "Chillow / EasyChatでWebSocket Hub, REST API, GORMによるDB連携を担当。モデレーションやJWT Cookie認証を含むバックエンドを実装。" },
+      { name: "Docker / Compose", level: 65, description: "Chillowでは複数サービスをDocker Compose + Makefileで起動。環境変数やストレージ切り替えまで自動化。" },
+      { name: "MySQL", level: 60, description: "Chillowの本番想定でMySQL 8 + GORMを活用。スキーマ設計、マイグレーション、添付データの保全まで対応。" },
+      { name: "PostgreSQL / Prisma", level: 55, description: "TaskHubでNeon(PostgreSQL)とPrisma 6を使い、migrate・型生成・API連携を実践。Next.jsのAPI Routesへ安全に組み込み。" },
       { name: "Python", level: 45, description: "ゲーム開発や補助スクリプト作成を通じて活用。扱いやすさとデータ処理・GUI開発への応用を学習中。" },
-      { name: "Go", level: 50, description: "リアルタイム通信アプリでのWebSocket実装経験に加え、進行中の個人開発でDB連携やAPI設計を実践中。" },
     ],
   },
   {
@@ -55,17 +57,17 @@ const Skills = (): JSX.Element => {
                 <tr>
                   <td>80〜100</td>
                   <td>実務相当レベル</td>
-                  <td>設計〜実装まで自力対応可能。42Tokyoで主軸として使用した経験あり。</td>
+                  <td>要件定義から設計・実装・レビューまでを自走できるレベル。</td>
                 </tr>
                 <tr>
                   <td>60〜79</td>
                   <td>実装可能レベル</td>
-                  <td>基本構文・ライブラリに習熟。多くの処理を自力で実装可能。</td>
+                  <td>基本構文・ライブラリに習熟し、一通りの機能を自力で実装できる。</td>
                 </tr>
                 <tr>
                   <td>40〜59</td>
                   <td>基礎理解レベル</td>
-                  <td>調べながら実装できるレベル。文法・構造の基本を理解している。</td>
+                  <td>文法や構造の基本を理解し、調べながらであれば実装できる。</td>
                 </tr>
                 <tr>
                   <td>20〜39</td>

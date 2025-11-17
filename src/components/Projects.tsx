@@ -5,6 +5,20 @@ import '../styles/projects.css';
 
 const projects = [
   {
+    name: "Chillow",
+    description: "Google OAuthで友達を追加して1対1チャット\nWebSocket Hubと添付ストレージを備えたリアルタイムアプリ",
+    techStack: ["React", "Go", "MySQL", "WebSocket"],
+    link: "/projects/chillow",
+    backgroundImage: "/portfolio/images/home/chillow-img.svg"
+  },
+  {
+    name: "TaskHub",
+    description: "Next.js + NextAuth + Prismaで構築したタスク管理\nカード＋モーダルでCRUDを一元化",
+    techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    link: "/projects/taskHub",
+    backgroundImage: "/portfolio/images/home/taskhub-img.svg"
+  },
+  {
     name: "minishell",
     description: "C言語でBashを実装\nパイプ処理・リダイレクト対応",
     techStack: ["C"],
@@ -19,15 +33,9 @@ const projects = [
     backgroundImage: "/portfolio/images/home/cub3d-img.png"
   },
   {
-    name: "easyChat",
-    description: "WebSocketを活用したリアルタイムチャット\nReact + Go + MySQL構成",
-    techStack: ["React", "Go", "MySQL"],
-    link: "/projects/easyChat",
-    backgroundImage: "/portfolio/images/home/easychat-img.png"
-  },
-  {
     name: "inception",
-    description: "Docker ComposeでWeb3層アーキテクチャを構築\nNginx + WordPress + MariaDB", techStack: ["Docker", "nginx", "MariaDB", "WordPress"],
+    description: "Docker ComposeでWeb3層アーキテクチャを構築\nNginx + WordPress + MariaDB",
+    techStack: ["Docker", "nginx", "MariaDB", "WordPress"],
     link: "/projects/inception",
     backgroundImage: "/portfolio/images/home/inception-img.png"
   },

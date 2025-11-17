@@ -7,9 +7,10 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import MinishellDetail from "./pages/MinishellDetail";
 import Cub3DDetail from "./pages/Cub3DDetail";
-import EasyChatDetail from "./pages/EasyChatDetail";
 import InceptionDetail from "./pages/InceptionDetail";
 import FlappyBirdDetail from "./pages/FlappyBirdDetail";
+import ChillowDetail from "./pages/ChillowDetail";
+import TaskHubDetail from "./pages/TaskHubDetail";
 
 const App = (): JSX.Element => {
   return (
@@ -22,9 +23,10 @@ const App = (): JSX.Element => {
             <Route path="/" element={<Home />} />
             <Route path="/projects/minishell" element={<MinishellDetail />} />
             <Route path="/projects/cub3D" element={<Cub3DDetail />} />
-            <Route path="/projects/easyChat" element={<EasyChatDetail />} />
             <Route path="/projects/inception" element={<InceptionDetail />} />
             <Route path="/projects/flappyBird" element={<FlappyBirdDetail />} />
+            <Route path="/projects/chillow" element={<ChillowDetail />} />
+            <Route path="/projects/taskHub" element={<TaskHubDetail />} />
           </Routes>
         </main>
         <Footer />

@@ -1,6 +1,47 @@
 import React from "react";
 import "../styles/chillow-detail.css";
 
+const chillowDesktopShots = [
+  {
+    src: "/portfolio/images/chillow/login.png",
+    caption: "OAuthログイン画面",
+    description: "Googleアカウントでの認証フローとテナント切り替えを表示。",
+  },
+  {
+    src: "/portfolio/images/chillow/chat.png",
+    caption: "デスクトップチャットUI",
+    description: "フレンド一覧＋メッセージタイムライン＋スタンプ送信。",
+  },
+  {
+    src: "/portfolio/images/chillow/report.png",
+    caption: "通報モーダル",
+    description: "添付つきの通報を管理者へ共有し、即時BANも可能。",
+  },
+  {
+    src: "/portfolio/images/chillow/ban.png",
+    caption: "モデレーションダッシュボード",
+    description: "BAN対象の履歴やレポートを一覧で確認。",
+  },
+];
+
+const chillowMobileShots = [
+  {
+    src: "/portfolio/images/chillow/login_mobile.png",
+    caption: "モバイルログイン",
+    description: "狭い画面幅でも1タップでOAuth選択。",
+  },
+  {
+    src: "/portfolio/images/chillow/chat_mobile.png",
+    caption: "モバイルチャット",
+    description: "スワイプで友達リストを切り替え可能なUI。",
+  },
+  {
+    src: "/portfolio/images/chillow/admin_mobile.png",
+    caption: "モバイルモデレーション",
+    description: "管理用イベントログをそのままスマホで処理。",
+  },
+];
+
 const ChillowDetail = (): JSX.Element => {
   return (
     <div className="chillow-detail">
@@ -15,6 +56,36 @@ const ChillowDetail = (): JSX.Element => {
             JWT Cookieで認証を維持しつつ、友達検索・申請・承認フロー、既読/タイピング表示、
             添付アップロードのワークロードをGo製バックエンドとReactフロントでさばいています。
           </p>
+        </section>
+
+        <section className="screens">
+          <h2>デスクトップ UI ギャラリー</h2>
+          <div className={`screenshot-grid ${chillowDesktopShots.length === 4 ? "two-column" : ""}`}>
+            {chillowDesktopShots.map((shot) => (
+              <figure key={shot.src} className="screenshot">
+                <img src={shot.src} alt={shot.caption} loading="lazy" />
+                <figcaption>
+                  <strong>{shot.caption}</strong>
+                  <span>{shot.description}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section className="screens mobile">
+          <h2>モバイル UI ギャラリー</h2>
+          <div className={`screenshot-grid ${chillowMobileShots.length === 4 ? "two-column" : ""}`}>
+            {chillowMobileShots.map((shot) => (
+              <figure key={shot.src} className="screenshot">
+                <img src={shot.src} alt={shot.caption} loading="lazy" />
+                <figcaption>
+                  <strong>{shot.caption}</strong>
+                  <span>{shot.description}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
 
         <section className="architecture">
@@ -160,4 +231,3 @@ make reset-db  # MySQLを再初期化`}
 };
 
 export default ChillowDetail;
-

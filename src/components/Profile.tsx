@@ -27,13 +27,25 @@ const Profile = (): JSX.Element => {
             問題解決能力と「なければ作る」というアプローチを養いました。
           </p>
           <p className="profile-text">
-            現在は、ReactやTypeScriptを中心にフロントエンド開発を行うだけでなく、Goを用いたAPI設計やデータベース連携など、本格的なアプリケーション開発にも取り組んでいます。
-            柔軟かつ本質的なアプローチで、幅広い領域の技術を探求し続けています。
+            現在はReactやTypeScriptでのUI実装に留まらず、Goを使ったAPI設計・DB連携、Docker Composeによる開発環境の整備まで含めた
+            <strong>Webアプリケーション開発</strong>
+            に注力しています。特に
+            <strong>Chillow</strong>
+            と
+            <strong>TaskHub</strong>
+            では、OAuth認証やリアルタイム通信、データモデルの設計を一貫して担い、
+            「プロダクトを自走して作り切る力」を実務さながらの要件で磨いてきました。
+            今後もWebアプリ開発の現場で、チームの課題をプロダクトで解決する役割を担いたいと考えています。
           </p>
 
           <p className="profile-text">
-            成果物としては、C言語で作成したBash風シェル「minishell」や、3D探索ゲーム「cub3D」に加え、GoとReactによるリアルタイムチャットアプリ「easyChat」、Docker Composeを活用してWeb3層アーキテクチャを構築した「Inception」、さらにPythonとKivyで実装したゲーム「Flappy Bird」などがあります。
-            フロントエンドからバックエンド、インフラ構築、ゲーム開発まで、多様な分野で経験を積んでいます。
+            これらのフルスタックプロジェクトを軸にしつつ、
+            <strong>minishell</strong> や
+            <strong>cub3D</strong>、
+            <strong>Inception</strong>、
+            <strong>Flappy Bird</strong>
+            といった低レイヤー・3D・インフラ・ゲーム領域の経験も積み重ねています。
+            フロントエンドからバックエンド、インフラまでを横断し、必要な技術を自ら学び取り入れる姿勢を大切にしています。
           </p>
         </div>
 

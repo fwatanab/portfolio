@@ -1,6 +1,42 @@
 import React from "react";
 import "../styles/taskhub-detail.css";
 
+const taskhubDesktopShots = [
+  {
+    src: "/portfolio/images/taskhub/signin.png",
+    caption: "サインイン",
+    description: "Googleアカウントを選択するNextAuth画面。",
+  },
+  {
+    src: "/portfolio/images/taskhub/create.png",
+    caption: "タスク作成フォーム",
+    description: "タイトル必須＋詳細は任意。バリデーションと即時反映を実装。",
+  },
+  {
+    src: "/portfolio/images/taskhub/home.png",
+    caption: "ヒーロー / ダッシュボード",
+    description: "チームの進捗状況とアクションボタンをまとめたトップ画面。",
+  },
+  {
+    src: "/portfolio/images/taskhub/detail.png",
+    caption: "モーダル詳細",
+    description: "全文をスクロールして確認し、そのまま編集・保存が可能。",
+  },
+];
+
+const taskhubMobileShots = [
+  {
+    src: "/portfolio/images/taskhub/signin_mobile.png",
+    caption: "モバイルサインイン",
+    description: "NextAuthのGoogleログインを1カラムに最適化。",
+  },
+  {
+    src: "/portfolio/images/taskhub/home_mobile.png",
+    caption: "モバイルTaskBoard",
+    description: "カードを縦並びにし、親指操作でCRUDを完結。",
+  },
+];
+
 const TaskHubDetail = (): JSX.Element => {
   return (
     <div className="taskhub-detail">
@@ -15,6 +51,36 @@ const TaskHubDetail = (): JSX.Element => {
             REST API経由で作成・取得・更新・削除をすべて完結させています。
             Tailwind CSSでUIを素早く組み立て、カード表示＋モーダル詳細の2段構成で長文タスクも読みやすくしました。
           </p>
+        </section>
+
+        <section className="screens">
+          <h2>デスクトップ UI ギャラリー</h2>
+          <div className={`screenshot-grid ${taskhubDesktopShots.length === 4 ? "two-column" : ""}`}>
+            {taskhubDesktopShots.map((shot) => (
+              <figure key={shot.src} className="screenshot">
+                <img src={shot.src} alt={shot.caption} loading="lazy" />
+                <figcaption>
+                  <strong>{shot.caption}</strong>
+                  <span>{shot.description}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section className="screens mobile">
+          <h2>モバイル UI ギャラリー</h2>
+          <div className={`screenshot-grid ${taskhubMobileShots.length === 4 ? "two-column" : ""}`}>
+            {taskhubMobileShots.map((shot) => (
+              <figure key={shot.src} className="screenshot">
+                <img src={shot.src} alt={shot.caption} loading="lazy" />
+                <figcaption>
+                  <strong>{shot.caption}</strong>
+                  <span>{shot.description}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
 
         <section className="stack">

@@ -1,0 +1,194 @@
+.taskhub-detail {
+  background: radial-gradient(circle at top, #2d1b69 0%, #0b1026 55%);
+  color: #e8ebff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.taskhub-detail .project-name {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #c084fc;
+  margin-bottom: 30px;
+  letter-spacing: 0.05em;
+}
+
+.taskhub {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(15, 18, 45, 0.85);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 30px 80px rgba(5, 6, 20, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.taskhub section {
+  margin-bottom: 32px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+.taskhub h2 {
+  font-size: 1.4rem;
+  color: #f0abfc;
+  margin-bottom: 14px;
+}
+
+.taskhub p,
+.taskhub li {
+  line-height: 1.7;
+  color: #f5f5ff;
+}
+
+.taskhub ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.taskhub li {
+  margin-bottom: 8px;
+}
+
+.stack-grid,
+.api-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.stack-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.api-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.stack-grid article,
+.api-grid article {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.stack-grid h3,
+.api-grid h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #c4b5fd;
+  letter-spacing: 0.04em;
+}
+
+.taskhub pre {
+  background: #090d23;
+  padding: 16px;
+  border-radius: 12px;
+  color: #d1dcff;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  margin-bottom: 0;
+}
+
+.taskhub code {
+  font-family: 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+}
+
+.github {
+  text-align: center;
+}
+
+.github a {
+  display: inline-block;
+  padding: 12px 24px;
+  color: #0b1026;
+  background: linear-gradient(120deg, #c084fc, #a855f7, #6366f1);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.45);
+}
+
+.github a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.55);
+}
+
+.demo {
+  text-align: center;
+}
+
+.demo-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  color: #fdfcff;
+  background: linear-gradient(115deg, #f0abfc, #c084fc, #8b5cf6);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(138, 92, 246, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.demo-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(138, 92, 246, 0.6);
+}
+
+@media (max-width: 768px) {
+  .taskhub-detail {
+    padding: 24px 14px;
+    background: #0b1026;
+  }
+
+  .taskhub {
+    padding: 22px 18px;
+  }
+
+  .stack-grid,
+  .api-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taskhub section {
+    padding: 16px;
+  }
+
+  .taskhub h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .taskhub-detail .project-name {
+    font-size: 1.6rem;
+  }
+
+  .taskhub {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .taskhub section {
+    margin-bottom: 22px;
+    border-radius: 12px;
+  }
+
+  .stack-grid article,
+  .api-grid article {
+    padding: 12px;
+  }
+
+  .demo-link,
+  .github a {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}

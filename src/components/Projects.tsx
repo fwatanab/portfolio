@@ -9,28 +9,21 @@ const projects = [
     description: "Google OAuthで友達を追加して1対1チャット\nWebSocket Hubと添付ストレージを備えたリアルタイムアプリ",
     techStack: ["React", "Go", "MySQL", "WebSocket"],
     link: "/projects/chillow",
-    backgroundImage: "/portfolio/images/home/chillow-img.svg"
+    backgroundImage: "/portfolio/images/home/chillow-img.png"
   },
   {
     name: "TaskHub",
     description: "Next.js + NextAuth + Prismaで構築したタスク管理\nカード＋モーダルでCRUDを一元化",
     techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
     link: "/projects/taskHub",
-    backgroundImage: "/portfolio/images/home/taskhub-img.svg"
+    backgroundImage: "/portfolio/images/home/taskhub-img.png"
   },
   {
-    name: "minishell",
-    description: "C言語でBashを実装\nパイプ処理・リダイレクト対応",
-    techStack: ["C"],
-    link: "/projects/minishell",
-    backgroundImage: "/portfolio/images/home/minishell-img.jpg"
-  },
-  {
-    name: "cub3d",
-    description: "レイトレーシング技術を用いた3Dエンジン\nWASD移動 & 視点操作可能",
-    techStack: ["C", "MinilibX"],
-    link: "/projects/cub3D",
-    backgroundImage: "/portfolio/images/home/cub3d-img.png"
+    name: "flappyBird",
+    description: "Kivyで実装したFlappy Bird風ゲーム\nPython + Kivy構成",
+    techStack: ["Python", "Kivy"],
+    link: "/projects/flappyBird",
+    backgroundImage: "/portfolio/images/home/flappybird-img.png"
   },
   {
     name: "inception",
@@ -40,18 +33,18 @@ const projects = [
     backgroundImage: "/portfolio/images/home/inception-img.png"
   },
   {
-    name: "flappyBird",
-    description: "Kivyで実装したFlappy Bird風ゲーム\nPython + Kivy構成",
-    techStack: ["Python", "Kivy"],
-    link: "/projects/flappyBird",
-    backgroundImage: "/portfolio/images/home/flappybird-img.png"
-//  },
-//  {
-//    name: "puyoGame",
-//    description: "C++ & SDL2で開発したぷよぷよ風ゲーム\nDockerでGUI実行",
-//    techStack: ["C++", "SDL2", "Docker"],
-//    link: "/projects/puyoGame",
-//    backgroundImage: "images/home/puyoGame-img.png"
+    name: "cub3d",
+    description: "レイトレーシング技術を用いた3Dエンジン\nWASD移動 & 視点操作可能",
+    techStack: ["C", "MinilibX"],
+    link: "/projects/cub3D",
+    backgroundImage: "/portfolio/images/home/cub3d-img.png"
+  },
+  {
+    name: "minishell",
+    description: "C言語でBashを実装\nパイプ処理・リダイレクト対応",
+    techStack: ["C"],
+    link: "/projects/minishell",
+    backgroundImage: "/portfolio/images/home/minishell-img.jpg"
   }
 ];
 
